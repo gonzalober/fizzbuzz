@@ -1,14 +1,19 @@
-var nums = [...Array(101).keys()];
-
+function _isDivisibleBy(divisor, number) {
+  return number % divisor === 0;
+}
 function fizzBuzz(nums) {
-  if (nums % 3 === 0 && nums % 5 === 0) {
-  return('FizzBuzz');
+  if (_isDivisibleBy(15, nums)) {
+    return('FizzBuzz');
   }
-  else if (nums % 5 === 0) {
+  else if (_isDivisibleBy(5, nums)) {
     return('Buzz');
   }
-  else if (nums % 3 === 0) {
+  else if (_isDivisibleBy(3, nums)) {
     return('Fizz');
+  } else {
+    return nums;
   }
-
+}
+for (var i = 1; i <= 100; i++) {
+  console.log(fizzBuzz(i));
 }
